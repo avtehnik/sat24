@@ -6,13 +6,17 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>sat24</title>
   <script src="vue.js"></script>
+  <style>
+      .noactive {
+          display: none;
+      }
+  </style>
 </head>
 <body>
 
 <div id="app" class="checkForm">
-
-  <div v-for="image in images"  >
-    <img :src="image">
+  <div v-for="(image, index) in images">
+    <img :src="image" v-bind:class="[index == picture ? 'active' : 'noactive']">
   </div>
 
 

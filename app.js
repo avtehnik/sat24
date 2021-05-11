@@ -2,24 +2,24 @@ var app = new Vue({
     el: '#app',
     data() {
         return {
-            images: [
-                'https://ru.sat24.com/image?type=visual&region=uk&timestamp=202105101235'
-            ]
+            picture: 0,
+            images: []
         }
     },
     methods: {
-        timeString(timestamp) {
-            var date = new Date();
 
-            date.setTime(timestamp);
-            return date;
-        },
     },
     mounted() {
-
+        var history = [ 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 105, 110, 115, 120];
         var t = this;
+        setInterval(function() {
+            t.picture++;
+            if (t.picture >= history.length) {
+                t.picture = 0;
+            }
+        }, 200);
 
-        [0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 105, 110, 115, 120].forEach(function(interval) {
+        history.forEach(function(interval) {
             var url = [];
             var date = new Date();
             url.push(date.getUTCFullYear());
