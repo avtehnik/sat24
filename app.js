@@ -19,7 +19,7 @@ var app = new Vue({
             }
         }, 200);
 
-        history.forEach(function(interval) {
+        history.reverse().forEach(function(interval) {
             var url = [];
             var date = new Date();
             url.push(date.getUTCFullYear());
