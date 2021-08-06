@@ -10,13 +10,19 @@
       .noactive {
           display: none;
       }
+
+      .satimage {
+          width: 845px;
+          height: 615px;
+      }
+
   </style>
 </head>
 <body>
 
 <div id="app" class="checkForm">
   <div v-for="(image, index) in images">
-    <img :src="image" v-bind:class="[index == picture ? 'active' : 'noactive']">
+    <img class="satimage" :src="image" v-bind:class="[index == picture ? 'active' : 'noactive']">
   </div>
 
 
